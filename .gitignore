@@ -1,0 +1,6 @@
+# Dont know if this is sensitive info, but still is different in every system so might as well ignore it
+nixos/hardware-configuration.nix
+
+# Didnt really want to share these here
+modules/git/email.txt
+modules/git/username.txt
