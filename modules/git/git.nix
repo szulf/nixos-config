@@ -6,8 +6,8 @@
 }: {
     programs.git = {
         enable = true;
-        userName = (builtins.readFile ./username.txt);
-        userEmail = (builtins.readFile ./email.txt);
+        userName = "szulf";
+        userEmail = "szymon.mieln@gmail.com";
         extraConfig = {
             init.defaultBranch = "main";
         };
