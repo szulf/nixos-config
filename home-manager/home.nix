@@ -25,9 +25,13 @@
         homeDirectory = "/home/user";
     };
 
+    fonts.fontconfig.enable = true;
+
     home.packages = with pkgs; [
         btop
         firefox
+        nerdfonts
+        font-awesome
     ];
 
     programs.home-manager.enable = true;

@@ -12,7 +12,12 @@
         enable = true;
 
         settings = {
-            "exec-once" = "swww-daemon";
+            "decoration:rounding" = 15;
+
+            "exec-once" = [
+                "swww-daemon"
+                "waybar"
+            ];
 
             "$mod" = "SUPER";
             "$mod_shift" = "SUPER_SHIFT";
@@ -53,4 +58,82 @@
     home.packages = with pkgs; [
         swww
     ];
+
+    programs.waybar = {
+        enable = true;
+
+        settings = [{
+            spacing = 5;
+
+            modules-left = [
+                "hyprland/workspaces"
+            ];
+
+            modules-center = [
+                "hyprland/window"
+            ];
+
+            modules-right = [
+                "battery"
+                "clock"
+            ];
+
+            battery = {
+                format = "{capacity}%";
+            };
+
+            clock = {
+                "tooltip-format" = "<tt><small>{calendar}</small></tt>";
+            };
+        }];
+        
+        style = ''
+            * {
+                font-family: "Monaspace Neon";
+                font-size: 13px;
+                padding: 0;
+                margin: 0;
+            }
+
+            window#waybar {
+                background: transparent;
+            }
+
+            #workspaces,
+            #window,
+            #clock,
+            #battery {
+                margin: 3px 0px 0 0px;
+                border-radius: 15px;
+                padding: 0 10px;
+                color: #ffffff;
+                background-color: rgba(0, 0, 0, 0.5);
+                border: 1.5px solid #ffffff;
+            }
+
+            #workspaces {
+                margin-left: 20px;
+            }
+
+            #workspaces button {
+                color: #ffffff;
+                padding: 0 5px;
+            }
+
+            #workspaces button:hover {
+                color: #ffffff;
+                background: transparent;
+                border: 1px solid #ffffff;
+            }
+
+            #workspaces button.active {
+                font-weight: bolder;
+                text-shadow: 0px 0px 4px #ffffff;
+            }
+
+            #clock {
+                margin-right: 20px;
+            }
+        '';
+    };
 }

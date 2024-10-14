@@ -17,6 +17,7 @@
     networking.networkmanager.enable = true;
 
     time.timeZone = "Europe/Warsaw";
+    services.automatic-timezoned.enable = true;
 
     i18n.defaultLocale = "en_US.UTF-8";
 
@@ -67,7 +68,7 @@
             initialPassword = "user";
             isNormalUser = true;
             openssh.authorizedKeys.keys = [ ];
-            extraGroups = [ "wheel" ];
+            extraGroups = [ "wheel" "audio" ];
         };
     };
 
@@ -108,6 +109,10 @@
         alsa.support32Bit = true;
         pulse.enable = true;
     };
+
+#    fonts.packages = with pkgs; [
+#        font-awesome
+#    ];
 
     system.stateVersion = "24.05";
 }

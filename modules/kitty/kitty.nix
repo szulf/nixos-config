@@ -12,9 +12,10 @@
         enable = true;
         settings = {
             background_opacity = "0.5";
+            window_padding_width = 5;
         };
         font = {
-            name = "Monaspace Argon";
+            name = "Monaspace Neon";
             size = 8;
         };
     };
