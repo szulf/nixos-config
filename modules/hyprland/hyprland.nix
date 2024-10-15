@@ -48,8 +48,8 @@
 
             binde = [
                 # Audio control
-                ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%+"
-                ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%-"
+                ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 2.0 @DEFAULT_AUDIO_SINK@ 5%+"
+                ", XF86AudioLowerVolume, exec, wpctl set-volume -l 2.0 @DEFAULT_AUDIO_SINK@ 5%-"
                 ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
             ];
         };
@@ -63,27 +63,49 @@
         enable = true;
 
         settings = [{
-            spacing = 5;
+            spacing = 8;
 
             modules-left = [
-                "hyprland/workspaces"
-            ];
-
-            modules-center = [
-                "hyprland/window"
-            ];
-
-            modules-right = [
-                "battery"
                 "clock"
             ];
 
+            modules-center = [
+                "hyprland/workspaces"
+            ];
+
+            modules-right = [
+                "wireplumber"
+                "battery"
+                "network"
+                "custom/power"
+            ];
+
+            wireplumber = {
+                format = " {volume}%";
+                "format-muted" = " {volume}%";
+                "on-scroll-up" = "wpctl set-volume -l 2.0 @DEFAULT_AUDIO_SINK@ 5%+";
+                "on-scroll-down" = "wpctl set-volume -l 2.0 @DEFAULT_AUDIO_SINK@ 5%-";
+                "on-click" = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+            };
+
             battery = {
-                format = "{capacity}%";
+                format = "{icon} {capacity}%";
+                "format-icons" = ["" "" "" "" ""];
+            };
+
+            network = {
+                format-ethernet = " {signalStrength}%";
+                format-wifi = " {signalStrength}%";
+                format-disconnected = "󰤭 ";
             };
 
             clock = {
-                "tooltip-format" = "<tt><small>{calendar}</small></tt>";
+                format = "{:%H:%M %A, %b %d, %Y}";
+            };
+
+            "custom/power" = {
+                format = "";
+                "on-click" = "shutdown -h now";
             };
         }];
         
@@ -99,11 +121,13 @@
                 background: transparent;
             }
 
-            #workspaces,
-            #window,
             #clock,
-            #battery {
-                margin: 3px 0px 0 0px;
+            #workspaces,
+            #wireplumber,
+            #battery,
+            #network,
+            #custom-power {
+                margin: 3px 0 0 0;
                 border-radius: 15px;
                 padding: 0 10px;
                 color: #ffffff;
@@ -111,7 +135,7 @@
                 border: 1.5px solid #ffffff;
             }
 
-            #workspaces {
+            #clock {
                 margin-left: 20px;
             }
 
@@ -131,8 +155,9 @@
                 text-shadow: 0px 0px 4px #ffffff;
             }
 
-            #clock {
+            #custom-power {
                 margin-right: 20px;
+                padding-right: 15px;
             }
         '';
     };
