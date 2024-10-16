@@ -29,7 +29,7 @@
 
     home.packages = with pkgs; [
         btop
-        firefox
+        firefox-unwrapped
         nerdfonts
         font-awesome
     ];

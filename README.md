@@ -10,8 +10,8 @@ Might change the greetd greeter so that it looks cooler.
 - [x] Setup login with greetd and tuigreet
 - [x] Setup wallpapers with swww
 - [x] Setup pipewire(audio)
-- [ ] Setup waybar(status bar)
-- [ ] Setup rofi(app launcher)
+- [x] Setup waybar(status bar)
+- [x] Setup wofi(app launcher)
 - [ ] Write a nvim config
 - [ ] Setup compilers and everything for dev
 - [ ] Add double monitor support
