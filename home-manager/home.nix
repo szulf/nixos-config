@@ -32,6 +32,8 @@
         firefox-unwrapped
         nerdfonts
         font-awesome
+        gimp
+        aseprite
     ];
 
     programs.home-manager.enable = true;

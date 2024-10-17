@@ -111,9 +111,7 @@
         wireplumber.enable = true;
     };
 
-#    fonts.packages = with pkgs; [
-#        font-awesome
-#    ];
+    services.xserver.enable = true;
 
     system.stateVersion = "24.05";
 }

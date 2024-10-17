@@ -10,9 +10,11 @@
 
     wayland.windowManager.hyprland = {
         enable = true;
+        xwayland.enable = true;
 
         settings = {
             "decoration:rounding" = 15;
+            "monitor" = "DP-1, 1920x1080@60, 0x0, 1";
 
             "exec-once" = [
                 "swww-daemon"
@@ -82,7 +84,7 @@
             ];
 
             wireplumber = {
-                format = " {volume}%";
+                format = "  {volume}%";
                 "format-muted" = " {volume}%";
                 "on-scroll-up" = "wpctl set-volume -l 2.0 @DEFAULT_AUDIO_SINK@ 5%+";
                 "on-scroll-down" = "wpctl set-volume -l 2.0 @DEFAULT_AUDIO_SINK@ 5%-";
@@ -90,13 +92,13 @@
             };
 
             battery = {
-                format = "{icon} {capacity}%";
+                format = "{icon}  {capacity}%";
                 "format-icons" = ["" "" "" "" ""];
             };
 
             network = {
-                format-ethernet = " {signalStrength}%";
-                format-wifi = " {signalStrength}%";
+                format-ethernet = "  {signalStrength}%";
+                format-wifi = "  {signalStrength}%";
                 format-disconnected = "󰤭 ";
             };
 
@@ -106,7 +108,7 @@
 
             "custom/power" = {
                 format = "";
-                "on-click" = "shutdown -h now";
+                "on-click" = "wlogout";
             };
         }];
         
@@ -227,6 +229,90 @@
                 font-weight: bolder;
                 text-shadow: 0px 0px 4px #ffffff;
                 border: none;
+            }
+        '';
+    };
+
+    programs.wlogout = {
+        enable = true;
+
+        layout = [
+            {
+                label = "hibernate";
+                action = "systemctl hibernate";
+                text = "Hibernate";
+                keybind = "h";
+            }
+            { }
+            {
+                label = "shutdown";
+                action = "systemctl poweroff";
+                text = "Shutdown";
+                keybind = "s";
+            }
+            {
+                label = "logout";
+                action = "loginctl terminate-user $USER";
+                text = "Logout";
+                keybind = "l";
+            }
+            {
+                label = "reboot";
+                action = "systemctl reboot";
+                text = "Reboot";
+                keybind = "r";
+            }
+        ];
+
+        style = ''
+            * {
+                font-family: "Monaspace Neon";
+                margin: 0;
+                padding: 0;
+            }
+
+            window {
+                background: rgba(0, 0, 0, 0.5);
+            }
+
+            button {
+                border-radius: 15px;
+                border: 1.5px solid #ffffff;
+                color: #ffffff;
+                background: rgba(0, 255, 0, 0.8);
+            }
+
+            button:nth-child(2),
+            button:nth-child(6) {
+                opacity: 0;
+            }
+
+            #hibernate {
+                background-image: image(url("/home/user/Downloads/hibernate.png"));
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 64px 64px;
+            }
+
+            #shutdown {
+                background-image: image(url("/home/user/Downloads/shutdown.png"));
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 64px 64px;
+            }
+
+            #reboot {
+                background-image: image(url("/home/user/Downloads/reboot.png"));
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 64px 64px;
+            }
+
+            #logout {
+                background-image: image(url("/home/user/Downloads/logout.png"));
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 64px 64px;
             }
         '';
     };
