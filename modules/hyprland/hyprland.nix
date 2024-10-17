@@ -279,7 +279,7 @@
                 border-radius: 15px;
                 border: 1.5px solid #ffffff;
                 color: #ffffff;
-                background: rgba(0, 255, 0, 0.8);
+                background: rgba(0, 0, 0, 0.8);
             }
 
             button:nth-child(2),
