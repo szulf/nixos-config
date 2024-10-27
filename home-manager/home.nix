@@ -1,7 +1,4 @@
 {
-    inputs,
-    lib,
-    config,
     pkgs,
     ...
 }: {
@@ -28,6 +25,7 @@
     fonts.fontconfig.enable = true;
 
     home.packages = with pkgs; [
+        cargo
         gnumake
         clang
         btop
