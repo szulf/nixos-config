@@ -12,12 +12,12 @@ Might change the greetd greeter so that it looks cooler.
 - [x] Setup pipewire(audio)
 - [x] Setup waybar(status bar)
 - [x] Setup wofi(app launcher)
-- [ ] Write a nvim config
+- [x] Write a nvim config
     - [x] Setup a theme(with treesitter)
     - [x] Setup Telescope
     - [x] Setup lsps with autocompletion
-    - [ ] Setup lualine
-    - [ ] Setup gitsigns
+    - [x] Setup lualine
+    - [x] Setup gitsigns
 - [ ] Setup all the useful programs
 - [ ] Add double monitor support
 - [ ] Setup a lockscreen?
