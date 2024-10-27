@@ -114,15 +114,13 @@
       "locked": {
         "lastModified": 1728303775,
         "narHash": "sha256-tfoOVgaPiEBZnoe//cLXNcOoYjAXKA/8DZ4Am+tF128=",
-        "owner": "hyprwm",
-        "repo": "Hyprland",
+        "path": "/nix/store/4af2rihs0pfd4v9zrmp20sdifqi7198l-source",
         "rev": "97444ed7a8a83406970fcc05907db1110435b59b",
-        "type": "github"
+        "type": "path"
       },
       "original": {
-        "owner": "hyprwm",
-        "repo": "Hyprland",
-        "type": "github"
+        "id": "hyprland",
+        "type": "indirect"
       }
     },
     "hyprland-protocols": {

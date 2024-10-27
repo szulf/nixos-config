@@ -1,6 +1,6 @@
 # My NixOS config
 
-Totally unfinished, and dont know if Im structuring it correctly. But it works so thats cool.
+Mostly finished, and don't know if Im structuring it correctly. But it works so thats cool.
 
 Might change the greetd greeter so that it looks cooler.
 
@@ -13,8 +13,14 @@ Might change the greetd greeter so that it looks cooler.
 - [x] Setup waybar(status bar)
 - [x] Setup wofi(app launcher)
 - [ ] Write a nvim config
-- [ ] Setup compilers and everything for dev
+    - [x] Setup a theme(with treesitter)
+    - [ ] Setup lsps with autocompletion
+    - [ ] Setup Telescope
+    - [ ] Setup lualine
+    - [ ] Setup gitsigns
+- [ ] Setup all the useful programs
 - [ ] Add double monitor support
+- [ ] Setup a lockscreen?
 ---
 
 ## Installation
@@ -27,4 +33,5 @@ git clone https://github.com/szulf/nixos-config
 Change the nixos/hardware-configuration.nix to the one generated in your /etc/nixos.
 
 Theoretically should work. Theoretically.
+Oh and it probably only works if you have and Nvidia GPU.
 

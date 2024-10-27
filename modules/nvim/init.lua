@@ -9,8 +9,10 @@ vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 
--- vim.opt.cursorline = true
-
 vim.opt.scrolloff = 10
 
-vim.keymap.set('n', '<leader>fe', function() vim.cmd('Ex') end, { })
+vim.keymap.set('n', '<leader>fe', function() vim.cmd('Oil') end, { })
+
+vim.api.nvim_set_option('clipboard', 'unnamedplus')
+
+require('config.lazy')

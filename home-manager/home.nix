@@ -6,7 +6,7 @@
     ...
 }: {
     imports = [
-        ../modules/hyprland/hyprland.nix
+        ../modules/wm/hyprland.nix
         ../modules/nvim/nvim.nix
         ../modules/zsh/zsh.nix
         ../modules/git/git.nix
@@ -28,6 +28,7 @@
     fonts.fontconfig.enable = true;
 
     home.packages = with pkgs; [
+        clang
         btop
         firefox-unwrapped
         nerdfonts
