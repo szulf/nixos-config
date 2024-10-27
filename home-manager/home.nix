@@ -28,6 +28,7 @@
     fonts.fontconfig.enable = true;
 
     home.packages = with pkgs; [
+        gnumake
         clang
         btop
         firefox-unwrapped
@@ -35,6 +36,7 @@
         font-awesome
         gimp
         aseprite
+        ripgrep
     ];
 
     programs.home-manager.enable = true;

@@ -14,8 +14,8 @@ Might change the greetd greeter so that it looks cooler.
 - [x] Setup wofi(app launcher)
 - [ ] Write a nvim config
     - [x] Setup a theme(with treesitter)
+    - [x] Setup Telescope
     - [ ] Setup lsps with autocompletion
-    - [ ] Setup Telescope
     - [ ] Setup lualine
     - [ ] Setup gitsigns
 - [ ] Setup all the useful programs
